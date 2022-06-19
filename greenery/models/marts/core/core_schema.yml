@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: int_user_details_address
+  - name: int_user_information_address
     description: "data about users and their geos etc"
     columns:
       - name: user_id
