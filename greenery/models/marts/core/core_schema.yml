@@ -1,11 +1,11 @@
 version: 2
 
 models:
-  - name: stg_greenery_users
-    description: "Greenery user details"
+  - name: int_user_details_address
+    description: "data about users and their geos etc"
     columns:
       - name: user_id
         description: "The primary key for this table"
         tests:
           - unique
-          - not_null
+          - not not_null
