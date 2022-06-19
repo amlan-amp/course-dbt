@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: int_product_purchases
+    description: "data about users and their geos etc"
+    columns:
+      - name: order_id
+        description: "The primary key for this table"
+        tests:
+          - not_null
