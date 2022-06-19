@@ -2,21 +2,35 @@
 
 1. what is our user repeat rate?
 
-Result: 99
+Result: 79.8
 
-                with  users_purchases_summary as
-                (select user_id, count(distinct(order_id)) as number_of_purchases
-                from dbt_amlan_p.stg_greenery_orders
-                group by 1
-                order by 2 desc)
-
-                select count(user_id)
-                from users_purchases_summary
-                where number_of_purchases >= 2
+                with repeat_orders as (
+                        select distinct(user_id)
+                    ,sum(distinct case when purchases_madeby_user >= 2 then 1 else 0 end) as repeat_user
+                        from dbt_amlan_p.fct_core_user_orders
+                        group by 1
+                    )
+                    select (sum(repeat_user)/count(distinct user_id)) as repeat_rate  from repeat_orders;
 
 2. What are good indicators of a user who will likely purchase again? What about indicators of users who are likely NOT to purchase again? If you had more data, what features would you want to look into to answer this question?
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+What questions the ERD should answer:
 
 User level analysis :
 How many users

@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: int_session_product_sales
+    description: "data about sessions on the webiste and corresponding sales "
+    columns:
+      - name: session_id
+        description: "The primary key for this table"
+        tests:
+          - not_null

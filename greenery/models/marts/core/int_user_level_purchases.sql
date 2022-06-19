@@ -11,6 +11,6 @@ orders as (
 
 select orders.*, 
 order_items.product_id, 
-order_items.quantity_value
+order_items.quantity_value as quantity_of_product
 from orders
 left join order_items on orders.order_id = order_items.order_id

@@ -21,7 +21,7 @@ select
 orders.order_id, 
 orders.promo_id,
 order_items.product_id,
-order_items.quantity_value,
+order_items.quantity_value as quantity_of_product,
 promos.discount as promotion_discount,
 promos.status as promotion_status,
 products.name as product_name,
