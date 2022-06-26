@@ -6,7 +6,7 @@ user_data as (
 )
 
 ,user_category as ( 
-    select * from {{ ref('int_user_category')}}
+    select * from {{ ref('int_user_purchases')}}
 
 )
 
